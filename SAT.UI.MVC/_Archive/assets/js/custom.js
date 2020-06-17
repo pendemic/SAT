@@ -52,7 +52,8 @@
 			$(this).toggleClass('active');
 			$('.header-area .nav').slideToggle(200);
 		});
-	}
+    }
+    
 
 
 	$(document).ready(function () {
