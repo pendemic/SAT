@@ -6,7 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using SAT.UI.MVC.Models;
-
+Install-Package Microsoft.AspNet.Identity.Samples -Pre
 namespace SAT.UI.MVC
 {
     public partial class Startup
