@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace IdentitySample
+namespace SAT.UI.MVC
 {
     public partial class Startup
     {
