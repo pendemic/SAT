@@ -396,7 +396,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ClassLibrary1\SAT.DATA.EF.csproj">
+    <ProjectReference Include="..\ClassLibrary1\SAT.DATA.EF.csproj">
       <Project>{f249ce4f-b2c5-4bd0-82a3-f1b9c33e7e20}</Project>
       <Name>SAT.DATA.EF</Name>
     </ProjectReference>
