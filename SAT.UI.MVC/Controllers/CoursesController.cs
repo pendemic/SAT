@@ -19,7 +19,7 @@ namespace SAT.UI.MVC.Controllers
         {
             return View(db.Courses.ToList());
         }
-
+        [Authorize(Roles ="Admin")]
         // GET: Courses/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,7 +34,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Create
         public ActionResult Create()
         {
@@ -57,7 +57,7 @@ namespace SAT.UI.MVC.Controllers
 
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -88,7 +88,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Courses/Delete/5
         public ActionResult Delete(int? id)
         {

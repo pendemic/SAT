@@ -4,16 +4,14 @@
     ViewBag.Title = "Students";
 }
 
-@section styles{
-    <!--DataTables.Net-->
-<link href="~/Content/assets/css/datatables.min.css" rel="stylesheet" />
-}
-
 <h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -57,53 +55,56 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Major)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
+            </td>
+            @if (User.IsInRole("Admin") || (User.IsInRole("Scheduling")))
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.FullName)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.StreetAddress)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.State)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ZipCode)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Major)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PhotoUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id=item.StudentID })
+                        @Html.ActionLink("Delete", "Delete", new{ id=item.StudentID })
+                    }
                 </td>
-            </tr>
+              }
+        </tr>
         }
     </tbody>
 </table>
 @section scripts{
-
-    <!--Datatables.net-->
-<script src="~/Content/assets/js/datatables.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.table').DataTable();
