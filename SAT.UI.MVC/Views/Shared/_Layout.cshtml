@@ -19,11 +19,12 @@
     -->
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="~/Content/assets/css/font-awesome.css">
-
     <link rel="stylesheet" href="~/Content/assets/css/templatemo-training-studio.css">
-
+    <!--DataTables.Net-->
+    <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+    <!--CustomStyle -->
+    <link href="~/Content/assets/css/CustomStyle.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -42,6 +43,7 @@
                             <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
                             <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
                             <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                            <li class="scroll-to-section"><a href="@Url.Action("Index", "Students")">Students</a></li>
                             <li class="main-button"><a href="#">Sign Up</a></li>
                         </ul>
                         <a class="menu-trigger">
@@ -62,8 +64,8 @@
         @*@Html.Partial("EmailConfirm", new SAT.UI.MVC.Models.ContactViewModel())*@
     </div>
     <!-- jQuery -->
-    @*<script src="~/Content/assets/js/jquery-2.1.0.min.js"></script>*@
-    <script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js”></script>
+    <script src="~/Content/assets/js/jquery-2.1.0.min.js"></script>
+    @*<script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js”></script>*@
     <!-- Bootstrap -->
     <script src="~/Content/assets/js/popper.js"></script>
     <script src="~/Content/assets/js/bootstrap.min.js"></script>
@@ -75,6 +77,10 @@
     <script src="~/Content/assets/js/imgfix.min.js"></script>
     <script src="~/Content/assets/js/mixitup.js"></script>
     <script src="~/Content/assets/js/accordions.js"></script>
+    <!--Datatables.net-->
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Global Init -->
     <script src="~/Content/assets/js/custom.js"></script>
@@ -84,7 +90,6 @@
     <script>
 
     </script>
-    @RenderSection("scripts", false);
     <script>
         $("ContactCreateForm").submit(function (e) {
             var formData = $(this).serializeArray();
@@ -103,6 +108,7 @@
             });
         });
     </script>
+    @RenderSection("scripts", false);
 
 </body>
 </html>
