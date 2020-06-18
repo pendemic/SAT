@@ -8,7 +8,6 @@ using System.ComponentModel.DataAnnotations;
 namespace ClassLibrary1
 {
     
-    
         #region course
         public class CourseMetadata
         {
@@ -167,18 +166,18 @@ namespace ClassLibrary1
 
             public int SSID { get; set; }
 
+            
         }
 
         [MetadataType(typeof(StudentMetadata))]
         public partial class Student
         {
 
-            [Display(Name = "Student Name")]
-            public string FullName
-            {
-                get { return FirstName + " " + LastName; }
-            }
-        }//end Student
+            [Display(Name = "Full Name")]
+            public string FullName { get { return FirstName + " " + LastName; } }
+
+
+        }
 
 
         #endregion
