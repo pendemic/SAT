@@ -7,8 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassLibrary1
 {
-    class SATMetadata
-    {
+    
+    
         #region course
         public class CourseMetadata
         {
@@ -173,10 +173,12 @@ namespace ClassLibrary1
         public partial class Student
         {
 
-            //[Display(Name = "Full Name")]
-            //public string FullName { get { return FirstName + " " + LastName; } }
-
-        }
+            [Display(Name = "Student Name")]
+            public string FullName
+            {
+                get { return FirstName + " " + LastName; }
+            }
+        }//end Student
 
 
         #endregion
@@ -206,5 +208,5 @@ namespace ClassLibrary1
         #endregion
 
 
-    }
+    
 }
