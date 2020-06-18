@@ -190,6 +190,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\CustomStyle.css" />
+    <Content Include="Content\assets\css\datatables.min.css" />
+    <Content Include="Content\assets\js\datatables.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -400,6 +403,9 @@
       <Project>{f249ce4f-b2c5-4bd0-82a3-f1b9c33e7e20}</Project>
       <Name>SAT.DATA.EF</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

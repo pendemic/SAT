@@ -13,14 +13,14 @@ namespace SAT.UI.MVC.Controllers
     public class StudentsController : Controller
     {
         private SATEntities db = new SATEntities();
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: Students
         public ActionResult Index()
         {
             var students = db.Students.Include(s => s.StudentStatus);
             return View(students.ToList());
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,7 +35,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(student);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Students/Create
         public ActionResult Create()
         {
@@ -60,7 +60,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Students/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -93,7 +93,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: Students/Delete/5
         public ActionResult Delete(int? id)
         {
