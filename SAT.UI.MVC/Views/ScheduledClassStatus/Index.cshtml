@@ -10,24 +10,37 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SCSName)
-        </th>
-        <th></th>
-    </tr>
+    <tbody>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SCSName)
+            </th>
+            <th></th>
+        </tr>
+    </tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SCSName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SCSID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SCSID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SCSID })
-        </td>
-    </tr>
-}
+    <thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SCSName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SCSID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SCSID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SCSID })
+                </td>
+            </tr>
+        }
+    </thead>
 
 </table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}

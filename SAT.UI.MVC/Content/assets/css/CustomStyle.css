@@ -1,4 +1,21 @@
 ﻿/*All Tables*/
 .table {
-    margin-top: 75px;
+    padding-top: 10em;
+    width: 95px;
 }
+/*Details view for all pages*/
+.detailcontainer {
+    border: 2px solid black;
+    padding: 10em;
+    background-color: gray;
+    box-shadow: 5px 5px black;
+    margin-top: 2em;
+}
+    /*.table.dataTable {
+        margin-left: 2em;
+        margin-right: 1em;
+    }*/
+/*.tablecontainer{
+    padding-right: 1em;
+    width: 95px;
+}*/
