@@ -316,3 +316,6 @@ C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\SAT.UI.MVC\obj\Debug\SAT.UI.MVC.csproj.CopyComplete
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\SAT.UI.MVC\obj\Debug\SAT.UI.MVC.dll
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\SAT.UI.MVC\obj\Debug\SAT.UI.MVC.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\SAT.UI.MVC\bin\ClassLibrary1.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\SAT.UI.MVC\bin\ClassLibrary1.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\SAT.UI.MVC\bin\ClassLibrary1.dll.config
