@@ -10,13 +10,13 @@ C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\ClassLibrary1\obj\Debug\SAT.DATA.EF.csproj.CopyComplete
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\bin\Debug\EntityFramework.xml
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\obj\Debug\SAT.DATA.EF.csprojAssemblyReference.cache
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\obj\Debug\SAT.DATA.EF.csproj.CoreCompileInputs.cache
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\obj\Debug\SAT.DATA.EF.csproj.CopyComplete
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\obj\Debug\ClassLibrary1.dll
-C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project\SAT\src\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\bin\Debug\EntityFramework.xml
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\obj\Debug\SAT.DATA.EF.csprojAssemblyReference.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\obj\Debug\SAT.DATA.EF.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\obj\Debug\SAT.DATA.EF.csproj.CopyComplete
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\11_Project Management\SAT\src\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
