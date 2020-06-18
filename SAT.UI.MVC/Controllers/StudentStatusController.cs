@@ -13,13 +13,13 @@ namespace SAT.UI.MVC.Controllers
     public class StudentStatusController : Controller
     {
         private SATEntities db = new SATEntities();
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus
         public ActionResult Index()
         {
             return View(db.StudentStatuses.ToList());
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Details/5
         public ActionResult Details(int? id)
         {
@@ -34,7 +34,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(studentStatus);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Create
         public ActionResult Create()
         {
@@ -57,7 +57,7 @@ namespace SAT.UI.MVC.Controllers
 
             return View(studentStatus);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -88,7 +88,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(studentStatus);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: StudentStatus/Delete/5
         public ActionResult Delete(int? id)
         {

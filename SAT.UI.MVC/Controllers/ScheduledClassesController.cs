@@ -13,14 +13,14 @@ namespace SAT.UI.MVC.Controllers
     public class ScheduledClassesController : Controller
     {
         private SATEntities db = new SATEntities();
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses
         public ActionResult Index()
         {
             var scheduledClasses = db.ScheduledClasses.Include(s => s.Cours).Include(s => s.ScheduledClassStatus);
             return View(scheduledClasses.ToList());
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,7 +35,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Create
         public ActionResult Create()
         {
@@ -62,7 +62,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SCSID = new SelectList(db.ScheduledClassStatuses, "SCSID", "SCSName", scheduledClass.SCSID);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin, Scheduling")]
         // GET: ScheduledClasses/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -97,7 +97,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SCSID = new SelectList(db.ScheduledClassStatuses, "SCSID", "SCSName", scheduledClass.SCSID);
             return View(scheduledClass);
         }
-
+        [Authorize(Roles = "Admin")]
         // GET: ScheduledClasses/Delete/5
         public ActionResult Delete(int? id)
         {
