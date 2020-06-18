@@ -4,6 +4,11 @@
     ViewBag.Title = "Students";
 }
 
+@section styles{
+    <!--DataTables.Net-->
+<link href="~/Content/assets/css/datatables.min.css" rel="stylesheet" />
+}
+
 <h2>@ViewBag.Title</h2>
 
 <p>
@@ -16,8 +21,8 @@
                 @Html.DisplayNameFor(model => model.FullName)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.StreetAddress)
             </th>
@@ -54,11 +59,11 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.FullName)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.LastName)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.StreetAddress)
                 </td>
@@ -96,9 +101,12 @@
     </tbody>
 </table>
 @section scripts{
+
+    <!--Datatables.net-->
+<script src="~/Content/assets/js/datatables.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.table').DataTable();
         });
-        </script>
+    </script>
 }
