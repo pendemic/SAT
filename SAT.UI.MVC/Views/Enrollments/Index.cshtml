@@ -6,12 +6,6 @@
 
 <h2>@ViewBag.Title</h2>
 
-@if (User.IsInRole("Admin") || (User.IsInRole("Scheduling")))
-{
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-}
 <table class="table">
     <thead>
         <tr>
@@ -54,6 +48,13 @@
     </tbody>
 
 </table>
+@if (User.IsInRole("Admin") || (User.IsInRole("Scheduling")))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+
 @section scripts{
     <script>
         $(document).ready(function () {
