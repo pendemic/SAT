@@ -57,21 +57,19 @@
                             <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
 
                             <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
-
-
-                            @if (User.IsInRole("Admin") || (User.IsInRole("Scheduling")))
+                            @if (User.IsInRole("Admin"))
                             {
                                 <li><a href="@Url.Action("Index", "Students")">Students</a></li>
                                 <li><a href="@Url.Action("Index", "StudentStatus")">Student Statuses</a></li>
                                 <li><a href="@Url.Action("Index","Courses")">Courses</a></li>
                                 <li><a href="@Url.Action("Index", "ScheduledClasses")">Scheduled Classes</a></li>
-                                <li><a href="@Url.Action("Index", "ScheduledClassStatus")">Scheduled Class Statuses</a></li>
+                                @*<li><a href="@Url.Action("Index", "ScheduledClassStatuses")">Scheduled Class Statuses</a></li>*@
                                 <li><a href="@Url.Action("Index", "Enrollments")">Enrollments</a></li>
                                 <li><a href="@Url.Action("Index","UsersAdmin")">Users</a></li>
                                 <li><a href="@Url.Action("Index","RolesAdmin")">Roles</a></li>
                             }
-
                             @Html.Partial("_LoginPartial")
+
                         </ul>
 
                         <a class="menu-trigger">

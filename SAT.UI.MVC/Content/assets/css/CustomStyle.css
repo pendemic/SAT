@@ -16,3 +16,75 @@
     padding-right: 1em;
     width: 95px;
 }*/
+/*Books, Details, Create, and Edit views*/
+#bookContainer {
+    border: 2px solid black;
+    padding: 1em;
+    background-color: orchid;
+    box-shadow: 10px 10px black;
+    margin-top: 2em;
+}
+
+/*#bookHeader {
+}*/
+
+#bookHeader > h3 {
+    float: left;
+    width: 80%;
+}
+
+#bookHeader > p {
+    margin-left: 81%;
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: red;
+}
+
+#bookLeft {
+    float: left;
+    width: 25%;
+}
+
+    #bookLeft img {
+        width: 95%;
+    }
+
+#bookRight {
+    margin-left: 26%;
+}
+
+    #bookRight fieldset {
+        border: 2px solid black;
+        border-radius: 1em;
+        padding: 1em;
+        margin-bottom: 1em;
+        width: 40%;
+    }
+
+    #bookRight legend {
+        border: 2px solid black;
+        border-radius: 1em;
+        padding-left: .5em;
+        font-size: 1em;
+        font-weight: 700;
+        width: 62%;
+    }
+
+#bookFooterLeft {
+    float: left;
+    width: 49%;
+}
+
+#bookFooterRight {
+    margin-left: 50%;
+    text-align: right;
+}
+/*Create and Edit Views For Books*/
+#bookContainer select,
+#bookContainer input[type="text"],
+#bookContainer input[type="number"] {
+    background-color: white;
+    width: 65%;
+    display: inline-block;
+}
