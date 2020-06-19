@@ -13,7 +13,7 @@ namespace SAT.UI.MVC.Controllers
     public class StudentsController : Controller
     {
         private SATEntities db = new SATEntities();
-        [Authorize(Roles = "Admin, Scheduling")]
+        [Authorize(Roles = "Admin, Scheduling, Employee")]
         // GET: Students
         public ActionResult Index()
         {
@@ -60,7 +60,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Employee")]
         // GET: Students/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -116,14 +116,32 @@ namespace SAT.UI.MVC.Controllers
         {
             Student student = db.Students.Find(id);
 
-            db.Students.Remove(student);
+            
             if (User.IsInRole("Admin"))
             {
-
+                db.Students.Remove(student);
             }
+            
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+        //public ActionResult withdrawn(int id)
+        //{
+        //    Student student = db.Students.Find(id);
+        //    if (User.IsInRole("Employee"))
+        //    {
+        //        student.SSID.Equals(3);
+        //        db.Entry(student).State = EntityState.Modified;
+
+
+        //    }
+
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+
+        //}
 
         protected override void Dispose(bool disposing)
         {

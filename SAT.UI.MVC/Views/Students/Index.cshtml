@@ -83,16 +83,24 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
                 </td>
-                @if (User.IsInRole("Admin") || (User.IsInRole("Scheduling")))
+                @if (User.IsInRole("Admin") || User.IsInRole("Scheduling") || User.IsInRole("Employee"))
                 {
-                    <td>
-                        @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
-                        @if (User.IsInRole("Admin"))
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                    @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentID })
+                        @if (item.SSID.Equals(3))
                         {
-                            @Html.ActionLink("Edit", "Edit", new { id = item.StudentID })
+                            @Html.ActionLink("Withdrawn", "Withdrawn", new { id = item.StudentID })
+                        }
+                        else
+                        {
                             @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
                         }
-                    </td>
+                    }
+
+                </td>
                 }
             </tr>
         }
