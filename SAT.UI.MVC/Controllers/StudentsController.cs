@@ -93,7 +93,7 @@ namespace SAT.UI.MVC.Controllers
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Employee")]
         // GET: Students/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -115,7 +115,12 @@ namespace SAT.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Student student = db.Students.Find(id);
+
             db.Students.Remove(student);
+            if (User.IsInRole("Admin"))
+            {
+
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
