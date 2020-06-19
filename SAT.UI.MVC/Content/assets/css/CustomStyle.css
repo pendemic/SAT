@@ -88,3 +88,15 @@
     width: 65%;
     display: inline-block;
 }
+.dataTables_wrapper {
+    padding-top: 200px;
+}
+
+.container-fluid {
+    padding-top: 100px;
+}
+
+.contact-header {
+    padding-top: 100px;
+    text-align: center;
+}
