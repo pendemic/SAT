@@ -192,6 +192,7 @@
   <ItemGroup>
     <Content Include="Content\assets\css\CustomStyle.css" />
     <Content Include="Content\assets\css\datatables.min.css" />
+    <Content Include="Content\assets\images\first-trainer.jpg" />
     <Content Include="Content\assets\js\datatables.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -206,7 +207,7 @@
     <Content Include="Content\assets\images\contact-bg.jpg" />
     <Content Include="Content\assets\images\cta-bg.jpg" />
     <Content Include="Content\assets\images\features-first-icon.png" />
-    <Content Include="Content\assets\images\first-trainer.jpg" />
+    <Content Include="Content\assets\images\first-trainerA.jpg" />
     <Content Include="Content\assets\images\gym-video.mp4" />
     <Content Include="Content\assets\images\line-dec.png" />
     <Content Include="Content\assets\images\schedule-bg.jpg" />
