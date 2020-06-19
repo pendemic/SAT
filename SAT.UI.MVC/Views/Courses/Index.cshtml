@@ -6,7 +6,7 @@
 
 <h2>@ViewBag.Title</h2>
 
-@if (User.IsInRole("Admin"))
+@if (User.IsInRole("Admin") || User.IsInRole("Employee"))
 {
     <p>
         @Html.ActionLink("Create New", "Create")
@@ -56,13 +56,23 @@
         <td>
             @Html.DisplayFor(modelItem => item.IsActive)
         </td>
-        @if (User.IsInRole("Admin"))
+        @if (User.IsInRole("Admin") || User.IsInRole("Employee"))
         {
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
+            @if (item.IsActive)
+            {
                 @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
-            </td>
+            }
+            else
+            {
+               
+                @Html.ActionLink("Reactivate", "Reactivate", new { id = item.CourseID })
+               
+            }
+
+        </td>
         }
     </tr>
     }

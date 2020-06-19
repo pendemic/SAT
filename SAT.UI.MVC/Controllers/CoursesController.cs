@@ -34,7 +34,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Employee")]
         // GET: Courses/Create
         public ActionResult Create()
         {
@@ -57,7 +57,7 @@ namespace SAT.UI.MVC.Controllers
 
             return View(course);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Employee")]
         // GET: Courses/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -88,7 +88,7 @@ namespace SAT.UI.MVC.Controllers
             }
             return View(course);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Employee")]
         // GET: Courses/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -110,9 +110,37 @@ namespace SAT.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses.Find(id);
-            db.Courses.Remove(course);
+
+          
+
+            if (User.IsInRole("Admin"))
+            {
+                db.Courses.Remove(course);
+            }
+            if(User.IsInRole("Employee"))
+            {
+                course.IsActive = false;
+                db.Entry(course).State = EntityState.Modified;
+            }
+           
+
+            
+
+
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Reactivate(int id)
+        {
+            Course course = db.Courses.Find(id);
+
+            course.IsActive = true;
+            db.Entry(course).State = EntityState.Modified;
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
         protected override void Dispose(bool disposing)
@@ -120,7 +148,7 @@ namespace SAT.UI.MVC.Controllers
             if (disposing)
             {
                 db.Dispose();
-            }
+            }   
             base.Dispose(disposing);
         }
     }

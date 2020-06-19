@@ -119,7 +119,15 @@ namespace SAT.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Enrollment enrollment = db.Enrollments.Find(id);
-            db.Enrollments.Remove(enrollment);
+            if (User.IsInRole("Admin"))
+            {
+                db.Enrollments.Remove(enrollment);
+            }
+            else
+            {
+                //enrollment.isActive = false;
+                db.Entry(enrollment).State = EntityState.Modified;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
