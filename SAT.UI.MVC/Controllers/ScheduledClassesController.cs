@@ -119,7 +119,20 @@ namespace SAT.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ScheduledClass scheduledClass = db.ScheduledClasses.Find(id);
-            db.ScheduledClasses.Remove(scheduledClass);
+
+            if (User.IsInRole("Admin"))
+            {
+                db.ScheduledClasses.Remove(scheduledClass);
+            }
+            else
+            {
+                //scheduledClass.isActive = false;
+                db.Entry(scheduledClass).State = EntityState.Modified;
+            }
+
+
+
+            
             db.SaveChanges();
             return RedirectToAction("Index");
         }
