@@ -14,8 +14,8 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-    <div id="bookContainer">
-        <div id="bookHeader">
+    <div id="studentContainer">
+        <div id="studentHeader">
             <h3>
             </h3>
             <p>
@@ -28,7 +28,7 @@
             </p>
             <div class="clearfix"></div>
         </div>
-        <div id="bookLeft">
+        <div id="studentLeft">
             <p>
                 <img src="~/Content/assets/images/blank person.png" />
             </p>
@@ -38,7 +38,7 @@
             <p></p>
             <p></p>
         </div>
-        <div id="bookRight">
+        <div id="studentRight">
             <p>
                 
             </p>
@@ -100,10 +100,10 @@
             </fieldset>
         </div>
         <div class="clearfix"></div>
-        <div id="bookFooterLeft">
+        <div id="studentFooterLeft">
             @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-danger" })
         </div>
-        <div id="bookFooterRight">
+        <div id="studentFooterRight">
             <input type="submit" value="Create Student" class="btn btn-default" />
 
         </div>

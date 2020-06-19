@@ -48,10 +48,35 @@ namespace SAT.UI.MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName,StreetAddress,City,State,ZipCode,Major,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Create([Bind(Include = "StudentID,FirstName,LastName,StreetAddress,City,State,ZipCode,Major,Phone,Email,PhotoUrl,SSID")] Student student, HttpPostedFileBase studentImage)
         {
             if (ModelState.IsValid)
             {
+                #region File Upload Students
+                string imageName = "blank person.png";
+
+                if (studentImage != null)
+                {
+                    //file name
+                    imageName = studentImage.FileName;
+
+                    string ext = imageName.Substring(imageName.LastIndexOf('.'));
+                    string[] gExt = { "jpg", ".jpeg", ".png", ".gif" };
+
+                    if (gExt.Contains(ext.ToLower()) && studentImage.ContentLength <=4194304)
+                    {
+                        imageName = Guid.NewGuid() + ext;
+                        studentImage.SaveAs(Server.MapPath("~/Content/assets/images/SAT_Students/" + imageName));
+                    }//end if
+                    else //extension is bad
+                    {
+                        imageName = "blank person.png";
+                    }//end else
+                }//end If studentImage != null
+
+                student.PhotoUrl = imageName;
+
+                #endregion
                 db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");

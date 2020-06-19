@@ -13,34 +13,45 @@
     </p>
 }
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SSName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SSDescription)
-        </th>
-        <th></th>
-    </tr>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SSName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SSDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-    @foreach (var item in Model)
-    {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SSName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SSDescription)
-        </td>
-        @if (User.IsInRole("Admin"))
+    <tbody>
+        @foreach (var item in Model)
         {
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SSID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.SSID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.SSID })
-            </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SSName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SSDescription)
+                </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SSID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.SSID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SSID })
+                    </td>
+                }
+            </tr>
         }
-    </tr>
-    }
+    </tbody>
 
 </table>
+@section scripts{
+<script>
+    $(document).ready(function () {
+    $('.table').DataTable();
+    })
+</script>
+    }

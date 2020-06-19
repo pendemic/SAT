@@ -192,7 +192,7 @@
   <ItemGroup>
     <Content Include="Content\assets\css\CustomStyle.css" />
     <Content Include="Content\assets\css\datatables.min.css" />
-    <Content Include="Content\assets\images\blank person.png" />
+    <Content Include="Content\assets\images\SAT_Students\blank person.png" />
     <Content Include="Content\assets\images\first-trainer.jpg" />
     <Content Include="Content\assets\js\datatables.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
