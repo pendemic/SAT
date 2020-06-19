@@ -7,74 +7,77 @@
 <div class="container">
     <h2>@ViewBag.Title</h2>
 </div>
-@if (User.IsInRole("Admin"))
-{
-<div class="container" >    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-</div>}
-    <div class="tablecontainer">
-        <table class="table">
-            <thead>
+<div class="tablecontainer">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CourseDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditHours)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Curriculum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CourseName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CourseDescription)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CreditHours)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Curriculum)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Notes)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.IsActive)
-                    </th>
-                    <th></th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CourseDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditHours)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curriculum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
+                        </td>
+                    }
                 </tr>
-            </thead>
+            }
+        </tbody>
 
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CourseName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CourseDescription)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CreditHours)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Curriculum)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Notes)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IsActive)
-                        </td>
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.CourseID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
-                            </td>
-                        }
-                    </tr>
-                }
-            </tbody>
+    </table>
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="container">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+        </div>
+    }
 
-        </table>
-    </div>
+</div>
 @section scripts{
     <script>
         $(document).ready(function () {

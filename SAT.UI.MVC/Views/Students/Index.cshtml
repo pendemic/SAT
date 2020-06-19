@@ -46,10 +46,13 @@
         </tr>
     </thead>
 
-    <tbody>
+    <tbody class="tbody">
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    <img src="~/Content/assets/images/SAT_Students/t_@item.PhotoUrl" alt="@item.PhotoUrl" />
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FullName)
                 </td>
